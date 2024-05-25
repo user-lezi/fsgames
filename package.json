@@ -1,0 +1,32 @@
+{
+  "name": "fsgames",
+  "version": "1.0.0",
+  "description": "Play games through your forgescript bots ",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node dist/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user-lezi/fsgames.git"
+  },
+  "keywords": [
+    "forgescript",
+    "fsgames",
+    "discord-games",
+    "games"
+  ],
+  "author": "lezii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/user-lezi/fsgames/issues"
+  },
+  "homepage": "https://github.com/user-lezi/fsgames#readme",
+  "devDependencies": {
+    "@tryforge/forgescript": "^1.4.0",
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5"
+  }
+}
