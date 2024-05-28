@@ -1,0 +1,8 @@
+src
+tsconfig.json
+\.upm
+\.replit
+replit.nix
+\.config
+\.cache
+\.git
