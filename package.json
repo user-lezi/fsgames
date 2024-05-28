@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "prettier src -w && tsc",
     "test": "npm run build && node dist/test.js"
   },
   "repository": {
@@ -27,6 +27,11 @@
   "devDependencies": {
     "@tryforge/forgescript": "^1.4.0",
     "@types/node": "^20.12.12",
+    "discord.js": "^14.15.2",
+    "prettier": "^3.2.5",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "tiny-typed-emitter": "^2.1.0"
   }
 }

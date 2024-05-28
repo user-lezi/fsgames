@@ -1,8 +1,8 @@
+node_modules
 \.upm
 \.replit
 replit.nix
 \.config
 \.cache
 \.git
-node_modules
 \.npmignore
