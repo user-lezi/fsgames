@@ -1,5 +1,5 @@
 replit.nix
 \.replit
-node_modules
-\.upm
-\.cache
+node_modules/
+\.upm/
+\.cache/
