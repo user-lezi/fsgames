@@ -24,6 +24,14 @@ client.commands.add({
 
 client.commands.add({
   type: "messageCreate",
+  name: "rps",
+  code: `
+  $startRockPaperScissor[$authorID;$mentioned[0]]
+  `,
+});
+
+client.commands.add({
+  type: "messageCreate",
   name: "games",
   code: `
   $codeBlock[$djsEval[ctx.client.getExtension("FSGames", true).constructor.games];js]
@@ -52,6 +60,14 @@ games.commands?.add({
   $sendMessage[$channelID;
 **[GameUpdate\\]:** <@$gameState[user]> has updated the game state of **$gameName** to \`$gameState[state]\`!  by playing move \`$gameState[move]\`. Go to $hyperlink[message;$messageLink[$channelID;$gameMessageID]]]
   `,
+});
+
+client.commands.add({
+  type: "messageCreate",
+  name: "e",
+  code: `$codeBlock[$djsEval[
+  const games = ctx.client.getExtension("FSGames", true).constructor.games;
+  $message];js]`,
 });
 
 client.login(process.env.BotToken);

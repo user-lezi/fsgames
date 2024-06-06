@@ -57,6 +57,11 @@ export default new NativeFunction({
         GameStateProperty.move,
         GameStateProperty.state,
       ],
+      [GameType.RockPaperScissor]: [
+        GameStateProperty.user,
+        GameStateProperty.move,
+        GameStateProperty.state,
+      ],
     };
 
     let gameType = game.type;
@@ -78,6 +83,9 @@ export default new NativeFunction({
       } else if (prop == "state") {
         value = value?.win ? "win" : value?.tie ? "tie" : "ongoing";
       }
+      returnValue = value;
+    } else if (GameType.RockPaperScissor === gameType) {
+      let value = GameStateProperties[prop](game);
       returnValue = value;
     }
 

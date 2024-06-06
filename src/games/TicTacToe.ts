@@ -81,8 +81,8 @@ export class TicTacToeGame extends BaseGame {
               id: that.turnUser.id,
               emoji:
                 that.game.data.player == TTTPlayer.X
-                  ? that.config.emojis.x
-                  : that.config.emojis.o,
+                  ? that.emojis.x
+                  : that.emojis.o,
             }),
           );
           that.ctx.container.components = that.boardButtons(true);
@@ -132,13 +132,11 @@ export class TicTacToeGame extends BaseGame {
           .setCustomId(`ttt_${index}`)
           .setStyle(ButtonStyle.Secondary);
         if (sq === TTTPlayer.Empty) {
-          button.setEmoji(this.config.emojis.empty);
+          button.setEmoji(this.emojis.empty);
           if (disabled) button.setDisabled(true);
         } else {
           button
-            .setEmoji(
-              sq === TTTPlayer.X ? this.config.emojis.x : this.config.emojis.o,
-            )
+            .setEmoji(sq === TTTPlayer.X ? this.emojis.x : this.emojis.o)
             .setDisabled(true);
         }
         componentArgs.push(button);

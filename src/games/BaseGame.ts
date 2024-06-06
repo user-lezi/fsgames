@@ -2,6 +2,7 @@ import { Context } from "@tryforge/forgescript";
 import { BaseInteraction, Message } from "discord.js";
 export enum GameType {
   TicTacToe,
+  RockPaperScissor,
 }
 import { GameConfigs } from "../GameConfigs";
 import { FSGames } from "..";
@@ -47,12 +48,20 @@ export class BaseGame {
     return GameConfigs[this.type];
   }
 
+  get emojis() {
+    return this.config.emojis as { [key: string]: string };
+  }
+
   isInteraction() {
     return !!this.ctx.interaction;
   }
 
   isTicTacToe() {
     return this.type === GameType.TicTacToe;
+  }
+
+  isRockPaperScissor() {
+    return this.type === GameType.RockPaperScissor;
   }
 
   parseText(text: string, moreOpts: { [key: string]: any } = {}) {

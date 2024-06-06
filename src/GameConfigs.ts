@@ -30,10 +30,12 @@ const CommonMessageData: MessageData = {
 
 export interface ButtonData {
   forfeit: string;
+  end: string;
 }
 
 const CommonButtonData: ButtonData = {
   forfeit: "Forfeit",
+  end: "End",
 };
 
 export const GameConfigs = {
@@ -46,6 +48,19 @@ export const GameConfigs = {
       empty: "⬛",
     },
     timeout: 60 * 1000,
+    embed: CommonEmbedData,
+    message: CommonMessageData,
+    button: CommonButtonData,
+  },
+  [GameType.RockPaperScissor]: {
+    name: "Rock Paper Scissor",
+    description: "Play Rock Paper Scissor with your friends.",
+    emojis: {
+      rock: "🪨",
+      paper: "📄",
+      scissor: "✂️",
+    },
+    timeout: 30 * 1000,
     embed: CommonEmbedData,
     message: CommonMessageData,
     button: CommonButtonData,

@@ -12,6 +12,7 @@ export interface MessageData {
 }
 export interface ButtonData {
     forfeit: string;
+    end: string;
 }
 export declare const GameConfigs: {
     0: {
@@ -21,6 +22,19 @@ export declare const GameConfigs: {
             x: string;
             o: string;
             empty: string;
+        };
+        timeout: number;
+        embed: EmbedData;
+        message: MessageData;
+        button: ButtonData;
+    };
+    1: {
+        name: string;
+        description: string;
+        emojis: {
+            rock: string;
+            paper: string;
+            scissor: string;
         };
         timeout: number;
         embed: EmbedData;

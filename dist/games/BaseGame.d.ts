@@ -1,7 +1,8 @@
 import { Context } from "@tryforge/forgescript";
 import { Message } from "discord.js";
 export declare enum GameType {
-    TicTacToe = 0
+    TicTacToe = 0,
+    RockPaperScissor = 1
 }
 export declare class BaseGame {
     readonly ctx: Context;
@@ -29,9 +30,25 @@ export declare class BaseGame {
         embed: import("..").EmbedData;
         message: import("..").MessageData;
         button: import("..").ButtonData;
+    } | {
+        name: string;
+        description: string;
+        emojis: {
+            rock: string;
+            paper: string;
+            scissor: string;
+        };
+        timeout: number;
+        embed: import("..").EmbedData;
+        message: import("..").MessageData;
+        button: import("..").ButtonData;
+    };
+    get emojis(): {
+        [key: string]: string;
     };
     isInteraction(): boolean;
     isTicTacToe(): boolean;
+    isRockPaperScissor(): boolean;
     parseText(text: string, moreOpts?: {
         [key: string]: any;
     }): string;

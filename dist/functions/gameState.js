@@ -41,6 +41,11 @@ exports.default = new forgescript_1.NativeFunction({
                 GameStateProperty.move,
                 GameStateProperty.state,
             ],
+            [BaseGame_1.GameType.RockPaperScissor]: [
+                GameStateProperty.user,
+                GameStateProperty.move,
+                GameStateProperty.state,
+            ],
         };
         let gameType = game.type;
         let availableProperties = allAvailableProperties[gameType];
@@ -58,6 +63,10 @@ exports.default = new forgescript_1.NativeFunction({
             else if (prop == "state") {
                 value = value?.win ? "win" : value?.tie ? "tie" : "ongoing";
             }
+            returnValue = value;
+        }
+        else if (BaseGame_1.GameType.RockPaperScissor === gameType) {
+            let value = exports.GameStateProperties[prop](game);
             returnValue = value;
         }
         return this.success(returnValue);

@@ -16,6 +16,7 @@ const CommonMessageData = {
 };
 const CommonButtonData = {
     forfeit: "Forfeit",
+    end: "End",
 };
 exports.GameConfigs = {
     [BaseGame_1.GameType.TicTacToe]: {
@@ -27,6 +28,19 @@ exports.GameConfigs = {
             empty: "⬛",
         },
         timeout: 60 * 1000,
+        embed: CommonEmbedData,
+        message: CommonMessageData,
+        button: CommonButtonData,
+    },
+    [BaseGame_1.GameType.RockPaperScissor]: {
+        name: "Rock Paper Scissor",
+        description: "Play Rock Paper Scissor with your friends.",
+        emojis: {
+            rock: "🪨",
+            paper: "📄",
+            scissor: "✂️",
+        },
+        timeout: 30 * 1000,
         embed: CommonEmbedData,
         message: CommonMessageData,
         button: CommonButtonData,

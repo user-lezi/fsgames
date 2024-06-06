@@ -38,6 +38,7 @@ games.commands.add({
 ### Available Games
 #### TicTacToe
 > Available from `v1.0.0+`
+
 Example Code:
 ```ts
 client.commands.add({
@@ -47,6 +48,22 @@ client.commands.add({
   $let[player1;$authorID]
   $let[player2;$mentioned[0]]
   $!startTicTacToe[$get[player1];$get[player2]]
+  `
+})
+```
+
+### Rock Paper Scissor
+> Available from `v1.0.0`
+
+Example Code:
+```ts
+client.commands.add({
+  type: "messageCreate",
+  name: "rps",
+  code: `
+  $let[player1;$authorID]
+  $let[player2;$mentioned[0]]
+  $!startRockPaperScissors[$get[player1];$get[player2]]
   `
 })
 ```

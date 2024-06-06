@@ -4,6 +4,7 @@ exports.BaseGame = exports.GameType = void 0;
 var GameType;
 (function (GameType) {
     GameType[GameType["TicTacToe"] = 0] = "TicTacToe";
+    GameType[GameType["RockPaperScissor"] = 1] = "RockPaperScissor";
 })(GameType || (exports.GameType = GameType = {}));
 const GameConfigs_1 = require("../GameConfigs");
 const __1 = require("..");
@@ -45,11 +46,17 @@ class BaseGame {
     get config() {
         return GameConfigs_1.GameConfigs[this.type];
     }
+    get emojis() {
+        return this.config.emojis;
+    }
     isInteraction() {
         return !!this.ctx.interaction;
     }
     isTicTacToe() {
         return this.type === GameType.TicTacToe;
+    }
+    isRockPaperScissor() {
+        return this.type === GameType.RockPaperScissor;
     }
     parseText(text, moreOpts = {}) {
         let opts = {
