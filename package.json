@@ -1,0 +1,35 @@
+{
+  "name": "fsgames",
+  "version": "1.0.0",
+  "description": "Games in forgescript bots",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "node dist/__test__/index.js",
+    "build": "prettier src -w && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/user-lezi/fsgames.git"
+  },
+  "keywords": [
+    "fsgames",
+    "forgescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/user-lezi/fsgames/issues"
+  },
+  "homepage": "https://github.com/user-lezi/fsgames#readme",
+  "devDependencies": {
+    "@tryforge/forgescript": "^1.4.0",
+    "@types/node": "^22.4.2",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "files": [
+    "README.md",
+    "dist"
+  ]
+}
