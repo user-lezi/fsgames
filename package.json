@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "node dist/__test__/index.js",
-    "build": "prettier src -w && tsc"
+    "bot": "node dist/__test__/index.js",
+    "build": "prettier src -w && tsc",
+    "test": "npm run build && npm run bot"
   },
   "repository": {
     "type": "git",
@@ -16,20 +17,17 @@
     "fsgames",
     "forgescript"
   ],
-  "author": "",
+  "author": "lezii",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/user-lezi/fsgames/issues"
   },
   "homepage": "https://github.com/user-lezi/fsgames#readme",
   "devDependencies": {
-    "@tryforge/forgescript": "^1.4.0",
-    "@types/node": "^22.4.2",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.4"
-  },
-  "files": [
-    "README.md",
-    "dist"
-  ]
+    "@tryforge/forgescript": "^2.1.0",
+    "@types/node": "^22.10.5",
+    "dotenv": "^16.4.7",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  }
 }
