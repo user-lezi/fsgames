@@ -7,7 +7,8 @@
   "scripts": {
     "bot": "node dist/__test__/index.js",
     "build": "prettier src -w && tsc",
-    "test": "npm run build && npm run bot"
+    "test": "npm run build && npm run bot",
+    "docs": "node dist/docgen"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,8 @@
     "dotenv": "^16.4.7",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "discord-gamecord": "^4.4.2"
   }
 }
