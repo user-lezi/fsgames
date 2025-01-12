@@ -8,7 +8,7 @@
     "bot": "node dist/__test__/index.js",
     "build": "prettier src -w && tsc",
     "test": "npm run build && npm run bot",
-    "docs": "node dist/docgen"
+    "docs": "tsc && typedoc src/index.ts && node dist/docgen"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "@types/node": "^22.10.5",
     "dotenv": "^16.4.7",
     "prettier": "^3.4.2",
+    "typedoc": "^0.27.6",
     "typescript": "^5.7.2"
   },
   "dependencies": {
