@@ -21,3 +21,26 @@ export interface I2048GameOptions {
   timeoutTime: number;
   buttonStyle: ButtonColors;
 }
+
+export interface IConnect4GameOptions {
+  opponent: string;
+  embed: {
+    title: string;
+    statusTitle: string;
+    color: string;
+  };
+  emojis: {
+    board: string;
+    player1: string;
+    player2: string;
+  };
+  timeoutTime: number;
+  buttonStyle: ButtonColors;
+
+  turnMessage: string;
+  winMessage: string;
+  tieMessage: string;
+  timeoutMessage: string;
+  requestMessage: string;
+  rejectMessage: string;
+}
